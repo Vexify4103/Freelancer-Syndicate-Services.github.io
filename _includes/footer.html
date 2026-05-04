@@ -1,0 +1,28 @@
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <span class="logo-bracket">[</span>FSS<span class="logo-bracket">]</span>
+      <p>Freelancer Syndicate Services</p>
+      <p class="footer-sub">A Star Citizen Organization</p>
+    </div>
+    <div class="footer-links">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a href="{{ '/guides' | relative_url }}">Guides</a></li>
+        <li><a href="{{ '/members' | relative_url }}">Members</a></li>
+        <li><a href="{{ '/join' | relative_url }}">Join Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Community</h4>
+      <ul>
+        <li><a href="{{ site.discord_url }}" target="_blank" rel="noopener">Discord</a></li>
+        <li><a href="{{ site.rsi_url }}" target="_blank" rel="noopener">RSI Org Page</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; {{ 'now' | date: '%Y' }} Freelancer Syndicate Services &mdash; Star Citizen Organization</p>
+  </div>
+</footer>

@@ -1,0 +1,32 @@
+# Notable Members
+# To add a member: copy a block below and fill in the fields.
+# avatar: path to image in assets/images/members/ — leave blank to show initials
+# rsi: full URL to their RSI citizen profile (optional)
+
+- name: TheDyingYak
+  rank: Founder
+  role: Fleet Commander
+  specialty: Trading & Logistics
+  avatar:
+  rsi: https://robertsspaceindustries.com/en/citizens/TheDyingYak
+
+- name: Pilot Placeholder
+  rank: Officer
+  role: Combat Lead
+  specialty: Bounty Hunting & Combat
+  avatar:
+  rsi:
+
+- name: Crew Member
+  rank: Senior Member
+  role: Miner
+  specialty: Ore Mining & Refining
+  avatar:
+  rsi:
+
+- name: New Recruit
+  rank: Member
+  role: Hauler
+  specialty: Freight & Cargo Runs
+  avatar:
+  rsi:

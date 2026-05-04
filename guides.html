@@ -1,0 +1,39 @@
+---
+layout: default
+title: Guides
+description: Guides for Star Citizen pilots — in-game mechanics, ship builds, org procedures, and more.
+permalink: /guides/
+---
+
+<div class="guides-page-header">
+  <div class="section-head">
+    <p class="section-eyebrow">Knowledge Base</p>
+    <h1 style="font-family: var(--font-head); font-weight: 800; font-size: clamp(2rem, 5vw, 3rem); color: var(--text-bright); letter-spacing: -0.01em;">Guides</h1>
+    <p>Everything you need to thrive in the 'verse — written by FSS members.</p>
+  </div>
+</div>
+
+<div class="guides-page container">
+  <!-- Filter Tabs -->
+  <div class="filter-bar" role="tablist">
+    <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+    <button class="filter-btn" data-filter="new-player" role="tab" aria-selected="false">New Player</button>
+    <button class="filter-btn" data-filter="in-game" role="tab" aria-selected="false">In-Game</button>
+    <button class="filter-btn" data-filter="org" role="tab" aria-selected="false">Org</button>
+    <button class="filter-btn" data-filter="ship-build" role="tab" aria-selected="false">Ship Builds</button>
+  </div>
+
+  <!-- Guide Cards -->
+  <div class="guides-grid" id="guides-grid">
+    {% assign sorted_guides = site.guides | sort: "date" | reverse %}
+    {% for guide in sorted_guides %}
+      {% include guide-card.html guide=guide %}
+    {% endfor %}
+  </div>
+
+  {% if site.guides.size == 0 %}
+  <div class="text-center" style="padding: 4rem 0; color: var(--text-dim);">
+    <p style="font-size: 1.1rem;">No guides yet — check back soon.</p>
+  </div>
+  {% endif %}
+</div>

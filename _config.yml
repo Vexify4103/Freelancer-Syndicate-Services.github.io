@@ -1,0 +1,36 @@
+title: Freelancer Syndicate Services
+description: A Star Citizen organization built on trust, skill, and teamwork.
+baseurl: ""
+url: "https://freelancer-syndicate-services.github.io"
+
+# Org links — update these with your real URLs
+discord_url: "https://discord.gg/Aft4Adm7XT"
+rsi_url: "https://robertsspaceindustries.com/en/orgs/FRLNCSS"
+
+# Jekyll settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+
+# Collections
+collections:
+  guides:
+    output: true
+    permalink: /guides/:name/
+
+# Default frontmatter
+defaults:
+  - scope:
+      path: ""
+      type: "guides"
+    values:
+      layout: "guide"
+
+# Sass
+sass:
+  sass_dir: assets/css
+  style: compressed
+
+# Plugins (all supported natively by GitHub Pages)
+plugins:
+  - jekyll-seo-tag

@@ -1,0 +1,95 @@
+---
+layout: default
+title: Home
+---
+
+<!-- Hero -->
+<section class="hero">
+  <p class="hero-eyebrow">Star Citizen Organization</p>
+  <h1>Freelancer <span>Syndicate</span> Services</h1>
+  <p class="hero-tagline">
+    <!-- Update this tagline to describe your org -->
+    Strength in numbers. Profit in coordination. We are pilots, traders, and warriors operating across the 'verse.
+  </p>
+  <div class="hero-actions">
+    <a href="{{ '/join' | relative_url }}" class="btn btn--primary btn--lg">Join the Syndicate</a>
+    <a href="{{ '/guides' | relative_url }}" class="btn btn--outline btn--lg">Browse Guides</a>
+  </div>
+</section>
+
+<!-- Quick Links -->
+<div class="quick-links">
+  <div class="quick-links-grid">
+    <a href="{{ site.discord_url }}" class="quick-link-item" target="_blank" rel="noopener">
+      <span class="ql-icon">💬</span> Discord
+    </a>
+    <a href="{{ site.rsi_url }}" class="quick-link-item" target="_blank" rel="noopener">
+      <span class="ql-icon">🚀</span> RSI Org Page
+    </a>
+    <a href="{{ '/members' | relative_url }}" class="quick-link-item">
+      <span class="ql-icon">👥</span> Our Members
+    </a>
+    <a href="{{ '/guides' | relative_url }}" class="quick-link-item">
+      <span class="ql-icon">📖</span> Guides
+    </a>
+  </div>
+</div>
+
+<!-- About -->
+<section class="about-strip">
+  <div class="container">
+    <div class="about-text">
+      <h2>Who We Are</h2>
+      <p>
+        Freelancer Syndicate Services is a multi-crew Star Citizen organization built on cooperation,
+        skillbuilding, and mutual profit. Whether you're hauling cargo between systems, running escort
+        contracts, or taking the fight to pirates — we've got a place for you.
+      </p>
+      <p>
+        We welcome both veterans and new citizens. Our guides, experienced members, and active
+        community will get you up to speed and flying profitably in no time.
+      </p>
+      <a href="{{ '/join' | relative_url }}" class="btn btn--outline mt-2">Learn More &rarr;</a>
+    </div>
+    <div class="about-stats">
+      <div class="stat-card">
+        <div class="stat-number">{{ site.guides | size | default: '0' }}</div>
+        <div class="stat-label">Guides</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">{{ site.data.members | size | default: '0' }}</div>
+        <div class="stat-label">Members</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Guide Topics</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">&#8734;</div>
+        <div class="stat-label">Adventures</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Guides -->
+{% assign featured = site.guides | where: "featured", true | limit: 3 %}
+{% if featured.size > 0 %}
+<section class="guides-section">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-eyebrow">Latest from the crew</p>
+      <h2>Featured Guides</h2>
+      <p>Hand-picked by our members to help you thrive in the 'verse.</p>
+    </div>
+    <div class="guides-grid">
+      {% for guide in featured %}
+        {% include guide-card.html guide=guide %}
+      {% endfor %}
+    </div>
+    <div class="text-center">
+      <a href="{{ '/guides' | relative_url }}" class="btn btn--outline">All Guides &rarr;</a>
+    </div>
+  </div>
+</section>
+{% endif %}

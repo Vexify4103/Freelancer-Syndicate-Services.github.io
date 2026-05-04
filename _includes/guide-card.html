@@ -1,0 +1,20 @@
+{% assign guide = include.guide %}
+<a class="guide-card" href="{{ guide.url | relative_url }}" data-category="{{ guide.category }}">
+  <div class="guide-card-header">
+    <span class="guide-badge guide-badge--{{ guide.category }}">
+      {% case guide.category %}
+        {% when 'new-player' %}New Player
+        {% when 'in-game' %}In-Game
+        {% when 'org' %}Org
+        {% when 'ship-build' %}Ship Build
+        {% else %}{{ guide.category }}
+      {% endcase %}
+    </span>
+  </div>
+  <h3 class="guide-card-title">{{ guide.title }}</h3>
+  <p class="guide-card-desc">{{ guide.description }}</p>
+  <div class="guide-card-meta">
+    <span class="guide-author">{{ guide.author }}</span>
+    <span class="guide-read">Read &rarr;</span>
+  </div>
+</a>

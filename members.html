@@ -1,0 +1,42 @@
+---
+layout: default
+title: Notable Members
+description: Meet the crew of Freelancer Syndicate Services.
+permalink: /members/
+---
+
+<div class="members-header">
+  <div class="section-head">
+    <p class="section-eyebrow">The Crew</p>
+    <h1 style="font-family: var(--font-head); font-weight: 800; font-size: clamp(2rem, 5vw, 3rem); color: var(--text-bright); letter-spacing: -0.01em;">Notable Members</h1>
+    <p>The pilots, traders, and fighters who make FSS what it is.</p>
+  </div>
+</div>
+
+<div class="members-page">
+  <div class="members-grid">
+    {% for member in site.data.members %}
+    <div class="member-card">
+      <div class="member-avatar">
+        {% if member.avatar and member.avatar != "" %}
+          <img src="{{ member.avatar | relative_url }}" alt="{{ member.name }}">
+        {% else %}
+          {{ member.name | slice: 0 }}
+        {% endif %}
+      </div>
+      <div class="member-rank">{{ member.rank }}</div>
+      <div class="member-name">{{ member.name }}</div>
+      <div class="member-role">{{ member.role }}</div>
+      <div class="member-specialty">{{ member.specialty }}</div>
+      {% if member.rsi and member.rsi != "" %}
+      <a class="member-link" href="{{ member.rsi }}" target="_blank" rel="noopener">View RSI Profile &rarr;</a>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="text-center mt-3">
+    <p style="color: var(--text-dim); margin-bottom: 1.25rem;">Want to be listed here? Join the org and make your mark.</p>
+    <a href="{{ '/join' | relative_url }}" class="btn btn--primary">Join FSS &rarr;</a>
+  </div>
+</div>

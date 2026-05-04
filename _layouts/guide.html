@@ -1,0 +1,70 @@
+---
+layout: default
+---
+<article class="guide-article">
+  <div class="guide-article-header">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <span>/</span>
+        <a href="{{ '/guides' | relative_url }}">Guides</a>
+        <span>/</span>
+        <span>{{ page.title }}</span>
+      </nav>
+      <span class="guide-badge guide-badge--{{ page.category }}">
+        {% case page.category %}
+          {% when 'new-player' %}New Player
+          {% when 'in-game' %}In-Game
+          {% when 'org' %}Org
+          {% when 'ship-build' %}Ship Build
+          {% else %}{{ page.category }}
+        {% endcase %}
+      </span>
+      <h1>{{ page.title }}</h1>
+      <p class="guide-article-desc">{{ page.description }}</p>
+      <div class="guide-article-meta">
+        <span>By {{ page.author }}</span>
+        <span>&mdash;</span>
+        <span>{{ page.date | date: "%B %-d, %Y" }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="guide-article-body container">
+    <div class="guide-content">
+      {{ content }}
+    </div>
+    <aside class="guide-sidebar">
+      <div class="sidebar-card">
+        <h4>About This Guide</h4>
+        <dl>
+          <dt>Category</dt>
+          <dd>
+            <span class="guide-badge guide-badge--{{ page.category }}">
+              {% case page.category %}
+                {% when 'new-player' %}New Player
+                {% when 'in-game' %}In-Game
+                {% when 'org' %}Org
+                {% when 'ship-build' %}Ship Build
+              {% endcase %}
+            </span>
+          </dd>
+          <dt>Author</dt>
+          <dd>{{ page.author }}</dd>
+          <dt>Published</dt>
+          <dd>{{ page.date | date: "%B %-d, %Y" }}</dd>
+        </dl>
+      </div>
+      <div class="sidebar-card sidebar-more">
+        <h4>More Guides</h4>
+        <ul>
+          {% assign other_guides = site.guides | where_exp: "g", "g.url != page.url" | limit: 4 %}
+          {% for g in other_guides %}
+          <li><a href="{{ g.url | relative_url }}">{{ g.title }}</a></li>
+          {% endfor %}
+        </ul>
+        <a class="btn btn--outline btn--sm" href="{{ '/guides' | relative_url }}">All Guides &rarr;</a>
+      </div>
+    </aside>
+  </div>
+</article>
