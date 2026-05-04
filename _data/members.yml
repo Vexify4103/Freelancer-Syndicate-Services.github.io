@@ -4,18 +4,18 @@
 # rsi: full URL to their RSI citizen profile (optional)
 
 - name: TheDyingYak
-  rank: Founder
+  rank: Founder / Boss
   role: Fleet Commander
-  specialty: Trading & Logistics
+  specialty: Piracy
   avatar:
   rsi: https://robertsspaceindustries.com/en/citizens/TheDyingYak
 
-- name: Pilot Placeholder
-  rank: Officer
-  role: Combat Lead
-  specialty: Bounty Hunting & Combat
+- name: Clearwood
+  rank: Co-Founder / Boss
+  role: Fleet Commander
+  specialty: Industry
   avatar:
-  rsi:
+  rsi: https://robertsspaceindustries.com/en/citizens/Clearwood
 
 - name: Crew Member
   rank: Senior Member
